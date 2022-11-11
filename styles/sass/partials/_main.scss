@@ -16,3 +16,13 @@ form {
         width: 50%;
     }
 }
+
+ul {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+
+    li {
+        margin: 0 10px;
+    }
+}
