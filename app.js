@@ -75,28 +75,28 @@ recipeRescue.displayRecipes = function (recipesList) {
 };
 
 // Create a method (recipeLink) which uses the id as a argument
-recipeRescue.recipeLink = function(id, recipeBox) {
-  const recipeSrcUrl = new URL(`https://api.spoonacular.com/recipes/${id}/information`);
-  
-  recipeSrcUrl.search = new URLSearchParams({
-    apiKey: apiKey
-  })
-  
-  fetch(recipeSrcUrl)
-  .then(function(res) {
-    return res.json();
-  })
-  .then(function(jsonRes) {
-    // Get the sourceUrl for the recipe based on the id
+recipeRescue.recipeLink = function (id, recipeBox) {
+    const recipeSrcUrl = new URL(`https://api.spoonacular.com/recipes/${id}/information`);
 
-    // create a anchor:
-    const recipeTitle = document.createElement("a");
-    // add the recipe name to the anchor with href:
-    recipeTitle.innerText = jsonRes.title;
-    recipeTitle.href = jsonRes.sourceUrl;
-    // append anchor to li:
-    recipeBox.appendChild(recipeTitle);
-  })
+    recipeSrcUrl.search = new URLSearchParams({
+        apiKey: apiKey
+    })
+
+    fetch(recipeSrcUrl)
+        .then(function (res) {
+            return res.json();
+        })
+        .then(function (jsonRes) {
+            // Get the sourceUrl for the recipe based on the id
+
+            // create a anchor:
+            const recipeTitle = document.createElement("a");
+            // add the recipe name to the anchor with href:
+            recipeTitle.innerText = jsonRes.title;
+            recipeTitle.href = jsonRes.sourceUrl;
+            // append anchor to li:
+            recipeBox.appendChild(recipeTitle);
+        })
 }
 
 
