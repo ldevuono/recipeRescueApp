@@ -24,7 +24,8 @@
 const recipeRescue = {};
 
 //api key        
-const apiKey = "f7e6e031ca8b40dea61881ae0346b75b";
+// const apiKey = "f7e6e031ca8b40dea61881ae0346b75b"; //Laura's API
+const apiKey = `d1f99c8f40004bf4a6894df959eca9ef`; //Leo's API
 
 // getRecipes method to get recipes from user input
 recipeRescue.getRecipes = function () {
@@ -51,10 +52,6 @@ recipeRescue.getRecipes = function () {
 // displayRecipes function to get recipes from api call onto the page
 recipeRescue.displayRecipes = function (recipesList) {
     recipesList.forEach(function (recipe) {
-        // create a h3:
-        const recipeTitle = document.createElement("h3");
-        // add the recipe name to the h3:
-        recipeTitle.innerText = recipe.title;
         // create the image element for the recipe image:
         const recipeImage = document.createElement("img");
         // add the recipe image to the image element:
@@ -63,9 +60,8 @@ recipeRescue.displayRecipes = function (recipesList) {
         recipeImage.alt = recipe.title;
         // create the li for our html ul:
         const recipeBox = document.createElement("li");
-        // append h3 and image to li:
+        // append image to li:
         recipeBox.appendChild(recipeImage);
-        recipeBox.appendChild(recipeTitle);
 
 
         // create variable to hold ul element:
@@ -73,11 +69,35 @@ recipeRescue.displayRecipes = function (recipesList) {
         // append li to ul:
         ulElement.appendChild(recipeBox);
 
+        // method call to get urls
+        recipeRescue.recipeLink(recipe.id, recipeBox);
     });
 };
 
+// Create a method (recipeLink) which uses the id as a argument
+recipeRescue.recipeLink = function(id, recipeBox) {
+  const recipeSrcUrl = new URL(`https://api.spoonacular.com/recipes/${id}/information`);
+  
+  recipeSrcUrl.search = new URLSearchParams({
+    apiKey: apiKey
+  })
+  
+  fetch(recipeSrcUrl)
+  .then(function(res) {
+    return res.json();
+  })
+  .then(function(jsonRes) {
+    // Get the sourceUrl for the recipe based on the id
 
-
+    // create a anchor:
+    const recipeTitle = document.createElement("a");
+    // add the recipe name to the anchor with href:
+    recipeTitle.innerText = jsonRes.title;
+    recipeTitle.href = jsonRes.sourceUrl;
+    // append anchor to li:
+    recipeBox.appendChild(recipeTitle);
+  })
+}
 
 
 
