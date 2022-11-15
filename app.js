@@ -1,31 +1,34 @@
-// Create an app object (recipeRescue)
-// Create apiKey and url variable
-
-// Add searchParams
-// - apiKey
-// - ingredients
-// - number of recipes
-
-// Create a method (getIngredients) to get user data
-// - add a event listener to the submit button
-
-// Create a method (getRecipes) which gets recipes that include the user inputs
-// Display recipe image & title and append to a gallery div
-// When user selects a recipe, retrieve and store id of recipe
-
-// Create a method (recipeLink) which uses the id as a argument
-// Get the sourceUrl for the recipe based on the id
-// Redirect user to sourceUrl when they choose the recipe
-
-// Create an init method to kick off the setup of the application
-
-
 // namespace
 const recipeRescue = {};
 
 //api key        
-const apiKey = "f7e6e031ca8b40dea61881ae0346b75b"; //Laura's API
-// const apiKey = `d1f99c8f40004bf4a6894df959eca9ef`; //Leo's API
+// const apiKey = "f7e6e031ca8b40dea61881ae0346b75b"; //Laura's API
+const apiKey = `d1f99c8f40004bf4a6894df959eca9ef`; //Leo's API
+
+// Create a method (getUserInput) to get user data
+// - add a event listener to the submit button
+recipeRescue.getUserInput = function () {
+  document.querySelector("button").addEventListener("click", function (e) {
+      e.preventDefault();
+      // create empty string for ingredient search param:
+      let string = "";
+
+      // grab all inputs, iterate through each element, and concat the value to the string:
+      document.querySelectorAll("input").forEach(function (food) {
+          string = string.concat(food.value, ",");
+      })
+
+      // Error handling => no inputs
+      // if blank (except for commas) => alert, else => continue
+      if (string === ",,,,,") {
+        alert("You have not entered any ingredients.");
+      }
+      else {
+        // pass string to getRecipes method:
+        recipeRescue.getRecipes(string);
+      }
+  })
+};
 
 // getRecipes method to get recipes from user input
 recipeRescue.getRecipes = function (ingredients) {
@@ -45,8 +48,16 @@ recipeRescue.getRecipes = function (ingredients) {
         .then(function (jsonRes) {
             // clearing the ul before adding new recipes to the page:
             document.querySelector("ul").innerHTML = " ";
-            // calling displayRecipes function:
-            recipeRescue.displayRecipes(jsonRes);
+
+            // Error Handling - inputs yield no results (typos)
+            // if jsonRes.length = 0 => alert
+            if (jsonRes.length === 0) {
+              alert("Please check your spelling.");
+            }
+            else {
+              // calling displayRecipes function:
+              recipeRescue.displayRecipes(jsonRes);
+            }
         });
 };
 
@@ -100,30 +111,8 @@ recipeRescue.recipeLink = function (id, recipeBox) {
         })
 }
 
-recipeRescue.getUserInput = function () {
-    document.querySelector("button").addEventListener("click", function (e) {
-        e.preventDefault();
-        // create empty string for ingredient search param:
-        let string = "";
-        // grab all inputs, iterate through each element, and concat the value to the string:
-        document.querySelectorAll("input").forEach(function (food) {
-            string = string.concat(food.value, ",");
-        })
-        // pass string to getRecipes method:
-        recipeRescue.getRecipes(string);
-    })
-};
-
-
-
-
-
-
-
 // init method
 recipeRescue.init = function () {
-    // calling getRecipes function:
-    // recipeRescue.getRecipes();
     recipeRescue.getUserInput();
 };
 
