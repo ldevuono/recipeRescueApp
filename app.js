@@ -24,17 +24,17 @@
 const recipeRescue = {};
 
 //api key        
-// const apiKey = "f7e6e031ca8b40dea61881ae0346b75b"; //Laura's API
-const apiKey = `d1f99c8f40004bf4a6894df959eca9ef`; //Leo's API
+const apiKey = "f7e6e031ca8b40dea61881ae0346b75b"; //Laura's API
+// const apiKey = `d1f99c8f40004bf4a6894df959eca9ef`; //Leo's API
 
 // getRecipes method to get recipes from user input
-recipeRescue.getRecipes = function () {
+recipeRescue.getRecipes = function (ingredients) {
     // make a call to the api
     const getRecipesUrl = new URL("https://api.spoonacular.com/recipes/findByIngredients");
     // search params
     getRecipesUrl.search = new URLSearchParams({
         apiKey: apiKey,
-        ingredients: "egg, tomato",
+        ingredients: ingredients,
         number: 3
     });
 
@@ -43,7 +43,8 @@ recipeRescue.getRecipes = function () {
             return res.json();
         })
         .then(function (jsonRes) {
-            console.log(jsonRes);
+            // clearing the ul before adding new recipes to the page:
+            document.querySelector("ul").innerHTML = " ";
             // calling displayRecipes function:
             recipeRescue.displayRecipes(jsonRes);
         });
@@ -74,7 +75,7 @@ recipeRescue.displayRecipes = function (recipesList) {
     });
 };
 
-// Create a method (recipeLink) which uses the id as a argument
+// Create a method (recipeLink) which uses the id as an argument
 recipeRescue.recipeLink = function (id, recipeBox) {
     const recipeSrcUrl = new URL(`https://api.spoonacular.com/recipes/${id}/information`);
 
@@ -89,7 +90,7 @@ recipeRescue.recipeLink = function (id, recipeBox) {
         .then(function (jsonRes) {
             // Get the sourceUrl for the recipe based on the id
 
-            // create a anchor:
+            // create an anchor:
             const recipeTitle = document.createElement("a");
             // add the recipe name to the anchor with href:
             recipeTitle.innerText = jsonRes.title;
@@ -99,13 +100,19 @@ recipeRescue.recipeLink = function (id, recipeBox) {
         })
 }
 
-
-
-
-
-
-
-
+recipeRescue.getUserInput = function () {
+    document.querySelector("button").addEventListener("click", function (e) {
+        e.preventDefault();
+        // create empty string for ingredient search param:
+        let string = "";
+        // grab all inputs, iterate through each element, and concat the value to the string:
+        document.querySelectorAll("input").forEach(function (food) {
+            string = string.concat(food.value, ",");
+        })
+        // pass string to getRecipes method:
+        recipeRescue.getRecipes(string);
+    })
+};
 
 
 
@@ -116,7 +123,8 @@ recipeRescue.recipeLink = function (id, recipeBox) {
 // init method
 recipeRescue.init = function () {
     // calling getRecipes function:
-    recipeRescue.getRecipes();
+    // recipeRescue.getRecipes();
+    recipeRescue.getUserInput();
 };
 
 // call init method
