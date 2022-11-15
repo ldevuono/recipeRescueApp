@@ -24,5 +24,19 @@ ul {
 
     li {
         margin: 0 10px;
+        width: 33%;
+
+        img {
+            width: 100%;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        a:hover, a:focus {
+            text-decoration: underline;
+        }
     }
 }
