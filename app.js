@@ -2,11 +2,11 @@
 const recipeRescue = {};
 
 //api key        
-// const apiKey = "f7e6e031ca8b40dea61881ae0346b75b"; //Laura's API
-const apiKey = `d1f99c8f40004bf4a6894df959eca9ef`; //Leo's API
+const apiKey = "f7e6e031ca8b40dea61881ae0346b75b"; //Laura's API
+// const apiKey = `d1f99c8f40004bf4a6894df959eca9ef`; //Leo's API
 
 // Create a method (getUserInput) to get user data
-// - add a event listener to the submit button
+// - add an event listener to the submit button
 recipeRescue.getUserInput = function () {
     document.querySelector("button").addEventListener("click", function (e) {
         e.preventDefault();
@@ -21,7 +21,7 @@ recipeRescue.getUserInput = function () {
         // Error handling => no inputs
         // if blank (except for commas) => alert, else => continue
         if (string === ",,,,,") {
-            alert("You have not entered any ingredients.");
+            alert("You have not entered any ingredients!");
         }
         else {
             // pass string to getRecipes method:
@@ -52,7 +52,7 @@ recipeRescue.getRecipes = function (ingredients) {
             // Error Handling - inputs yield no results (typos)
             // if jsonRes.length = 0 => alert
             if (jsonRes.length === 0) {
-                alert("Please check your spelling.");
+                alert("Please check your spelling and try again!");
             }
             else {
                 // calling displayRecipes function:
