@@ -1,15 +1,19 @@
 footer {
     color: white;
     background-color: black;
-    padding: 5px;
-    text-align: center;
     padding: 10px;
+    font-size: .9rem;
 
-    a {
-        text-decoration: none;
+    p {
+        width: 100%;
     }
-}
 
-footer a:visited {
-    color: white;
+    div {
+        display: flex;
+        justify-content: center;
+    }
+
+    a:visited {
+        color: white;
+    }
 }
