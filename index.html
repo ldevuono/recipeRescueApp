@@ -7,38 +7,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recipe Rescue</title>
     <link rel="stylesheet" href="./styles/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins&family=Rubik+Bubbles&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
     <header>
         <div class="wrapper">
-            <h1>Recipe Rescue</h1>
+            <h1>🍜 Recipe Rescue 🍳</h1>
         </div>
     </header>
 
     <main>
         <section class="fridge">
             <div class="wrapper">
-                <h2>What's in your fridge?</h2>
+                <div class="fridgeText">
+                    <h2>What's in your fridge?</h2>
+                    <p> Don't know what to make for dinner? Enter the ingredients you have on hand and let <span>Recipe
+                            Rescue</span> do the hard work for you!</p>
+                </div>
 
                 <form action="#" method="#" class="input" name="input">
-                    <label for="food1">Ingredient #1</label>
+                    <label for="food1">Ingredient One</label>
                     <input type="text" class="food1" id="food1" name="food1">
 
-                    <label for="food2">Ingredient #2</label>
+                    <label for="food2">Ingredient Two</label>
                     <input type="text" class="food2" id="food2" name="food2">
 
-                    <label for="food3">Ingredient #3</label>
+                    <label for="food3">Ingredient Three</label>
                     <input type="text" class="food3" id="food3" name="food3">
 
-                    <label for="food4">Ingredient #4</label>
+                    <label for="food4">Ingredient Four</label>
                     <input type="text" class="food4" id="food4" name="food4">
 
-                    <label for="food5">Ingredient #5</label>
+                    <label for="food5">Ingredient Five</label>
                     <input type="text" class="food5" id="food5" name="food5">
-
-                    <button>Get Recipes!</button>
-                    <button type="submit">Reset</button>
+                    <div class="buttons">
+                        <button class="getRecipes">Get Recipes</button>
+                        <button class="reset" type="submit">Reset</button>
+                    </div>
                 </form>
             </div>
         </section>
@@ -57,7 +67,7 @@
 
     <footer>
         <div class="wrapper">
-            <a href="https://junocollege.com/">Created at Juno College</a>
+            <p>Created at <a href="https://junocollege.com/">Juno College</a> by Leo Hon and Laura De Vuono</p>
         </div>
     </footer>
 

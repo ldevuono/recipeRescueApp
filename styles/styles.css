@@ -268,6 +268,8 @@ html {
 
 html {
   font-size: 125%;
+  background-color: lightsteelblue;
+  font-family: "Poppins", sans-serif;
 }
 
 img {
@@ -289,14 +291,46 @@ ul {
 }
 
 h1 {
+  font-family: "Rubik Bubbles", cursive;
   font-size: 3.5rem;
   text-align: center;
   margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
 }
 
 h2 {
   font-size: 2rem;
   text-align: center;
+}
+
+.fridgeText {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 10px;
+  border: dotted 3px midnightblue;
+  border-radius: 35px;
+  padding-top: 15px;
+}
+
+p {
+  width: 70%;
+  text-align: center;
+  margin: 10px 0;
+}
+
+span {
+  font-weight: bold;
 }
 
 form {
@@ -310,12 +344,70 @@ form {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-bottom: 20px;
+  margin: 20px 0;
+  padding: 15px;
+  border: dotted 3px midnightblue;
+  border-radius: 35px;
 }
-form input,
-form button {
+
+input {
   margin: 10px 0;
   width: 50%;
+  border: 3px solid black;
+  border-radius: 30px;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+  text-align: center;
+}
+
+label {
+  letter-spacing: 1px;
+}
+
+.buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 20px 0;
+}
+
+button {
+  padding: 15px;
+  color: white;
+  border: 3px solid black;
+  border-radius: 30px;
+  font-family: "Lato", sans-serif;
+  font-weight: bold;
+  cursor: pointer;
+  letter-spacing: 1px;
+}
+
+button:hover,
+button:focus {
+  -webkit-text-decoration: 2px underline;
+          text-decoration: 2px underline;
+}
+
+.getRecipes {
+  margin-right: 20px;
+  background-color: teal;
+}
+
+.reset {
+  background-color: tomato;
+}
+
+.recipes {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.recipes h2 {
+  margin-bottom: 5px;
 }
 
 ul {
@@ -326,33 +418,108 @@ ul {
       -ms-flex-pack: center;
           justify-content: center;
   margin-bottom: 20px;
+  border: dotted 3px midnightblue;
+  border-radius: 35px;
+  padding: 20px;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
 }
-ul li {
+
+li {
   margin: 0 10px;
   width: 33%;
+  text-align: center;
+  margin: 10px;
 }
-ul li img {
+
+img {
   width: 100%;
+  border-radius: 30px;
+  margin-bottom: 2px;
 }
-ul li a {
-  text-decoration: none;
+
+a {
+  -webkit-text-decoration: 2px underline;
+          text-decoration: 2px underline;
   color: black;
 }
-ul li a:hover, ul li a:focus {
-  text-decoration: underline;
+
+a:hover,
+a:focus {
+  text-decoration: none;
 }
 
 footer {
   color: white;
   background-color: black;
-  padding: 5px;
-  text-align: center;
   padding: 10px;
+  font-size: 0.9rem;
 }
-footer a {
-  text-decoration: none;
+footer p {
+  width: 100%;
 }
-
+footer div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
 footer a:visited {
   color: white;
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 800px) {
+  input {
+    width: 100%;
+  }
+  h1 {
+    font-size: 3rem;
+  }
+}
+@media (max-width: 690px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+  ul {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  li {
+    width: 100%;
+  }
+}
+@media (max-width: 400px) {
+  h1 {
+    font-size: 2rem;
+  }
+  .buttons {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  button {
+    width: 100%;
+  }
+  .reset {
+    margin-top: 10px;
+  }
+  .getRecipes {
+    margin-right: 0;
+  }
+  footer {
+    font-size: 0.8rem;
+    padding: 10px 0;
+  }
+  .wrapper {
+    width: 90%;
+  }
 }
