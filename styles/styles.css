@@ -294,16 +294,11 @@ h1 {
   font-family: "Rubik Bubbles", cursive;
   font-size: 3.5rem;
   text-align: center;
-  margin-bottom: 20px;
+  margin: 20px 0;
   text-transform: uppercase;
   letter-spacing: 1px;
   -webkit-transition: 0.3s ease;
   transition: 0.3s ease;
-}
-
-h2 {
-  font-size: 2rem;
-  text-align: center;
 }
 
 .fridgeText {
@@ -322,15 +317,68 @@ h2 {
   border-radius: 35px;
   padding-top: 15px;
 }
-
-p {
+.fridgeText h2 {
+  font-size: 2rem;
+  text-align: center;
+  font-family: "Merienda One", sans-serif;
+}
+.fridgeText p {
   width: 70%;
   text-align: center;
   margin: 10px 0;
 }
-
-span {
+.fridgeText span {
   font-weight: bold;
+}
+
+.recipes {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.recipes h2 {
+  margin-bottom: 5px;
+  text-align: center;
+  font-family: "Merienda One", sans-serif;
+}
+
+ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 20px;
+  border: dotted 3px midnightblue;
+  border-radius: 35px;
+  padding: 20px;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+}
+ul li {
+  margin: 0 10px;
+  width: 33%;
+  text-align: center;
+  margin: 10px;
+}
+ul li img {
+  width: 100%;
+  border-radius: 30px;
+  margin-bottom: 2px;
+}
+ul li a {
+  -webkit-text-decoration: 2px underline;
+          text-decoration: 2px underline;
+  color: black;
+}
+ul li a:hover,
+ul li a:focus {
+  text-decoration: none;
 }
 
 form {
@@ -349,8 +397,7 @@ form {
   border: dotted 3px midnightblue;
   border-radius: 35px;
 }
-
-input {
+form input {
   margin: 10px 0;
   width: 50%;
   border: 3px solid black;
@@ -359,94 +406,32 @@ input {
   transition: 0.3s ease;
   text-align: center;
 }
-
-label {
+form label {
   letter-spacing: 1px;
+  font-family: "Bitter", sans-serif;
 }
-
-.buttons {
+form .buttons {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   margin: 20px 0;
 }
-
-button {
+form .buttons button {
   padding: 15px;
   color: white;
-  border: 3px solid black;
+  border: none;
   border-radius: 30px;
   font-family: "Lato", sans-serif;
   font-weight: bold;
   cursor: pointer;
   letter-spacing: 1px;
 }
-
-button:hover,
-button:focus {
-  -webkit-text-decoration: 2px underline;
-          text-decoration: 2px underline;
-}
-
-.getRecipes {
+form .buttons .getRecipes {
   margin-right: 20px;
   background-color: teal;
 }
-
-.reset {
-  background-color: tomato;
-}
-
-.recipes {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-.recipes h2 {
-  margin-bottom: 5px;
-}
-
-ul {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  margin-bottom: 20px;
-  border: dotted 3px midnightblue;
-  border-radius: 35px;
-  padding: 20px;
-  -webkit-transition: 0.3s ease;
-  transition: 0.3s ease;
-}
-
-li {
-  margin: 0 10px;
-  width: 33%;
-  text-align: center;
-  margin: 10px;
-}
-
-img {
-  width: 100%;
-  border-radius: 30px;
-  margin-bottom: 2px;
-}
-
-a {
-  -webkit-text-decoration: 2px underline;
-          text-decoration: 2px underline;
-  color: black;
-}
-
-a:hover,
-a:focus {
-  text-decoration: none;
+form .buttons .reset {
+  background-color: #C21010;
 }
 
 footer {
@@ -455,18 +440,13 @@ footer {
   padding: 10px;
   font-size: 0.9rem;
 }
-footer p {
+footer div {
+  text-align: center;
+}
+footer div p {
   width: 100%;
 }
-footer div {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-footer a:visited {
+footer div a, footer div a:visited {
   color: white;
 }
 
@@ -492,11 +472,14 @@ footer a:visited {
         -ms-flex-align: center;
             align-items: center;
   }
-  li {
+  ul li {
     width: 100%;
   }
 }
 @media (max-width: 400px) {
+  .wrapper {
+    width: 90%;
+  }
   h1 {
     font-size: 2rem;
   }
@@ -506,20 +489,17 @@ footer a:visited {
         -ms-flex-direction: column;
             flex-direction: column;
   }
-  button {
+  .buttons button {
     width: 100%;
   }
-  .reset {
+  .buttons .reset {
     margin-top: 10px;
   }
-  .getRecipes {
+  .buttons .getRecipes {
     margin-right: 0;
   }
   footer {
     font-size: 0.8rem;
     padding: 10px 0;
-  }
-  .wrapper {
-    width: 90%;
   }
 }

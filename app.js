@@ -2,8 +2,8 @@
 const recipeRescue = {};
 
 //api key        
-const apiKey = "f7e6e031ca8b40dea61881ae0346b75b"; //Laura's API
-// const apiKey = `d1f99c8f40004bf4a6894df959eca9ef`; //Leo's API
+// const apiKey = "f7e6e031ca8b40dea61881ae0346b75b"; //Laura's API
+const apiKey = `d1f99c8f40004bf4a6894df959eca9ef`; //Leo's API
 
 // Create a method (getUserInput) to get user data
 // - add an event listener to the submit button
