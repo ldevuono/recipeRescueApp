@@ -24,11 +24,31 @@ recipeRescue.getUserInput = function () {
             alert("You have not entered any ingredients!");
         }
         else {
+            // // create "Your Recipes" SECTION on click
+            recipeRescue.yourRecipes();
             // pass string to getRecipes method:
             recipeRescue.getRecipes(string);
         }
     })
 };
+
+// Function to create "Your Recipes" SECTION on click
+recipeRescue.yourRecipes = function () {
+    // clearing the section before adding new recipes to the page:
+    document.querySelector(".recipes div").innerHTML = " ";
+    
+    // grabbing the gallery from HTML
+    const gallery = document.querySelector(".recipes div");
+
+    // create h2 & ul element
+    const h2Element = document.createElement("h2");
+    h2Element.innerText = "Your Recipes";
+    const ulElement = document.createElement("ul");
+
+    // append h2 & ul element to gallery
+    gallery.appendChild(h2Element);
+    gallery.appendChild(ulElement);
+}
 
 // getRecipes method to get recipes from user input
 recipeRescue.getRecipes = function (ingredients) {
@@ -46,9 +66,6 @@ recipeRescue.getRecipes = function (ingredients) {
             return res.json();
         })
         .then(function (jsonRes) {
-            // clearing the ul before adding new recipes to the page:
-            document.querySelector("ul").innerHTML = " ";
-
             // Error Handling - inputs yield no results (typos)
             // if jsonRes.length = 0 => alert
             if (jsonRes.length === 0) {

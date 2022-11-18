@@ -452,7 +452,7 @@ footer div a, footer div a:visited {
 
 /* MEDIA QUERIES */
 @media (max-width: 800px) {
-  input {
+  form input {
     width: 100%;
   }
   h1 {
