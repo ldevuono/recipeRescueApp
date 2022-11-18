@@ -10,10 +10,14 @@
     }
 }
 
-@media (max-width:690px) {
+@media (max-width:600px) {
 
     h1 {
         font-size: 2.5rem;
+    }
+
+    .recipes {
+        margin-bottom: inherit;
     }
 
     ul {
@@ -23,6 +27,10 @@
         li {
             width: 100%;
         }
+    }
+
+    footer {
+        position: static;
     }
 }
 
