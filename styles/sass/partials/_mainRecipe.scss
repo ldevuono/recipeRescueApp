@@ -1,0 +1,45 @@
+// RECIPES SECTION
+
+.recipes {
+  display: flex;
+  flex-direction: column;
+
+  h2 {
+      margin-bottom: 5px;
+      text-align: center;
+      font-family: 'Merienda One', sans-serif;
+  }
+}
+
+ul {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  border: dotted 3px midnightblue;
+  border-radius: 35px;
+  padding: 20px;
+  transition: .3s ease;
+
+  li {
+    margin: 0 10px;
+    width: 33%;
+    text-align: center;
+    margin: 10px;
+
+    img {
+      width: 100%;
+      border-radius: 30px;
+      margin-bottom: 2px;
+    }
+
+    a {
+      text-decoration: 2px underline;
+      color: black;
+    }
+
+    a:hover,
+    a:focus {
+      text-decoration: none;
+    }
+  }
+}

@@ -1,0 +1,50 @@
+// FORM
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px 0;
+  padding: 15px;
+  border: dotted 3px midnightblue;
+  border-radius: 35px;
+
+  input {
+    margin: 10px 0;
+    width: 50%;
+    border: 3px solid black;
+    border-radius: 30px;
+    transition: .3s ease;
+    text-align: center;
+  }
+
+  label {
+    letter-spacing: 1px;
+    font-family: 'Bitter', sans-serif;
+  }
+
+  .buttons {
+    display: flex;
+    margin: 20px 0;
+
+    button {
+      padding: 15px;
+      color: white;
+      border: none;
+      border-radius: 30px;
+      font-family: 'Lato', sans-serif;
+      font-weight: bold;
+      cursor: pointer;
+      letter-spacing: 1px;
+    }
+
+    .getRecipes {
+      margin-right: 20px;
+      background-color: teal;
+    }
+
+    .reset {
+      background-color: #C21010;
+    }
+  }
+}
