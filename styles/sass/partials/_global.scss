@@ -1,0 +1,31 @@
+//WRAPPER
+.wrapper {
+    width: 80%;
+    margin: 0 auto;
+    max-width: 1260px;
+}
+
+//DEFAULT STYLES
+html {
+    font-size: 125%;
+    background-color: lightsteelblue;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+//STRIPPING STYLES
+h1,
+h2,
+h3,
+p,
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style: none;
+}

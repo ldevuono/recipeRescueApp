@@ -2,8 +2,8 @@
 const recipeRescue = {};
 
 //api key        
-// const apiKey = "f7e6e031ca8b40dea61881ae0346b75b"; //Laura's API
-const apiKey = `d1f99c8f40004bf4a6894df959eca9ef`; //Leo's API
+const apiKey = "f7e6e031ca8b40dea61881ae0346b75b"; //Laura's API
+// const apiKey = `d1f99c8f40004bf4a6894df959eca9ef`; //Leo's API
 
 // Create a method (getUserInput) to get user data
 // - add an event listener to the submit button
@@ -64,7 +64,7 @@ recipeRescue.getRecipes = function (ingredients) {
 recipeRescue.yourRecipes = function () {
     // clearing the section before adding new recipes to the page:
     document.querySelector(".recipes div").innerHTML = " ";
-    
+
     // grabbing the gallery from HTML
     const gallery = document.querySelector(".recipes div");
 

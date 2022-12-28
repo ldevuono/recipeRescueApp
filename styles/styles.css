@@ -269,7 +269,6 @@ html {
 html {
   font-size: 125%;
   background-color: lightsteelblue;
-  font-family: "Poppins", sans-serif;
 }
 
 img {
@@ -288,6 +287,10 @@ ul {
 
 ul {
   list-style: none;
+}
+
+html {
+  font-family: "Merriweather", serif;
 }
 
 h1 {
@@ -320,7 +323,6 @@ h1 {
 .fridgeText h2 {
   font-size: 2rem;
   text-align: center;
-  font-family: "Merienda One", sans-serif;
 }
 .fridgeText p {
   width: 70%;
@@ -344,7 +346,6 @@ h1 {
 .recipes h2 {
   margin-bottom: 5px;
   text-align: center;
-  font-family: "Merienda One", sans-serif;
 }
 
 ul {
@@ -409,7 +410,6 @@ form input {
 }
 form label {
   letter-spacing: 1px;
-  font-family: "Bitter", sans-serif;
 }
 form .buttons {
   display: -webkit-box;
@@ -420,9 +420,8 @@ form .buttons {
 form .buttons button {
   padding: 15px;
   color: white;
-  border: none;
+  border: 3px solid black;
   border-radius: 30px;
-  font-family: "Lato", sans-serif;
   font-weight: bold;
   cursor: pointer;
   letter-spacing: 1px;
