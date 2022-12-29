@@ -463,9 +463,20 @@ footer div a:visited {
     font-size: 3rem;
   }
 }
+.fridgeText h2 {
+  font-size: 1.8rem;
+  padding: 8px;
+}
+.fridgeText p {
+  font-size: 0.9rem;
+}
+
 @media (max-width: 600px) {
   h1 {
     font-size: 2.5rem;
+  }
+  .fridgeText h2 {
+    font-size: 1.5rem;
   }
   .recipes {
     margin-bottom: inherit;
@@ -492,6 +503,13 @@ footer div a:visited {
   }
   h1 {
     font-size: 2rem;
+  }
+  .fridgeText h2 {
+    font-size: 1.5rem;
+    padding: 5px;
+  }
+  .fridgeText p {
+    font-size: 0.8rem;
   }
   .buttons {
     -webkit-box-orient: vertical;

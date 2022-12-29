@@ -10,10 +10,27 @@
     }
 }
 
+.fridgeText {
+    h2 {
+        font-size: 1.8rem;
+        padding: 8px;
+    }
+
+    p {
+        font-size: .9rem;
+    }
+}
+
 @media (max-width:600px) {
 
     h1 {
         font-size: 2.5rem;
+    }
+
+    .fridgeText {
+        h2 {
+            font-size: 1.5rem;
+        }
     }
 
     .recipes {
@@ -42,6 +59,17 @@
 
     h1 {
         font-size: 2rem;
+    }
+
+    .fridgeText {
+        h2 {
+            font-size: 1.5rem;
+            padding: 5px;
+        }
+
+        p {
+            font-size: .8rem;
+        }
     }
 
     .buttons {
