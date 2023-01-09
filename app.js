@@ -124,6 +124,7 @@ recipeRescue.recipeLink = function (id, recipeBox) {
             recipeTitle.href = jsonRes.sourceUrl;
             // append anchor to li:
             recipeBox.appendChild(recipeTitle);
+
         })
 }
 
