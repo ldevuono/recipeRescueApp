@@ -10,16 +10,19 @@ form {
   border-radius: 35px;
 
   input {
-    margin: 10px 0;
+    margin: 15px 0;
     width: 50%;
-    border: 3px solid black;
+    border: none;
     border-radius: 30px;
     transition: .3s ease;
     text-align: center;
+    caret-color: rgb(216, 36, 123);
+    padding: 5px;
   }
 
   label {
     letter-spacing: 1px;
+    text-transform: lowercase;
   }
 
   .buttons {
@@ -29,7 +32,7 @@ form {
     button {
       padding: 15px;
       color: white;
-      border: 3px solid black;
+      border: none;
       border-radius: 30px;
       font-weight: bold;
       cursor: pointer;
@@ -39,10 +42,20 @@ form {
     .getRecipes {
       margin-right: 20px;
       background-color: teal;
+
+      &:hover,
+      &:focus {
+        background-color: rgb(19, 68, 68);
+      }
     }
 
     .reset {
       background-color: #C21010;
+
+      &:hover,
+      &:focus {
+        background-color: rgb(120, 16, 16);
+      }
     }
   }
 }
