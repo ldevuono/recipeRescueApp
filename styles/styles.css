@@ -290,7 +290,7 @@ ul {
 }
 
 html {
-  font-family: "Merriweather", serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 h1 {
@@ -302,6 +302,7 @@ h1 {
   letter-spacing: 1px;
   -webkit-transition: 0.3s ease;
   transition: 0.3s ease;
+  color: black;
 }
 
 .fridgeText {
@@ -322,6 +323,7 @@ h1 {
 }
 .fridgeText h2 {
   font-size: 2rem;
+  font-weight: bold;
   text-align: center;
 }
 .fridgeText p {
@@ -329,8 +331,6 @@ h1 {
   text-align: center;
   letter-spacing: 0.9px;
   margin: 10px 0;
-}
-.fridgeText span {
   font-weight: bold;
 }
 
@@ -347,6 +347,8 @@ h1 {
 .recipes h2 {
   margin-bottom: 5px;
   text-align: center;
+  font-weight: bold;
+  color: black;
 }
 
 ul {
@@ -358,7 +360,7 @@ ul {
           justify-content: center;
   margin-bottom: 20px;
   border: dotted 3px midnightblue;
-  border-radius: 35px;
+  border-radius: 30px;
   padding: 20px;
   -webkit-transition: 0.3s ease;
   transition: 0.3s ease;
