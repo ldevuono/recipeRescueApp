@@ -116,7 +116,6 @@ recipeRescue.recipeLink = function (id, recipeBox) {
         })
         .then(function (jsonRes) {
             // Get the sourceUrl for the recipe based on the id
-            console.log(jsonRes)
             // create an anchor:
             const recipeTitle = document.createElement("a");
             // add the recipe name to the anchor with href:
